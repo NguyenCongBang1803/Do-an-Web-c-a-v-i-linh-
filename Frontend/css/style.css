@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 50px;
+    height: 80px;
+    align-items: center;
+}
+
+.logo {
+    flex: 1;
+}
+
+.menu {
+    flex: 3;
+    display: flex;
+}
+
+.menu > li {
+    padding: 0 12px;
+    position: relative;
+}
+
+.menu > li a {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    line-height: 20px;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 150px;
+    border: 1px solid #ccc;
+    padding: 10px 0 10px 20px;
+    background-color: white;
+    display: none; /* Hide submenu by default */
+}
+
+.menu > li:hover .sub-menu {
+    display: block; /* Show submenu on hover */
+}
+
+.sub-menu ul {
+    padding-left: 20px; /* Fixed padding */
+}
+
+.sub-menu ul a {
+    font-weight: normal !important;
+    font-size: 12px !important;
+    color: #333;
+}
+
+.menu > li > a {
+    font-size: 14px;
+    font-weight: bold !important;
+    display: block;
+    line-height: 20px;
+}
+.sub-read li ul {
+    left: 100%; /* Position submenus to the right of the parent */
+    top: 0;
+}
+
+/* Make submenus visible when hovering over their parent */
+li:hover > .sub-read, li:hover > ul {
+    display: block;
+}
+
+/* Submenu link styles */
+.sub-read a, .sub-read ul a {
+    
+   
+font-size: 12px;
+    
+   
+padding: 8px 15px;
+    
+   
+color: #333;
+}
+
+/* Hover effect for all submenu items */
+.sub-read a:hover, .sub-read ul a:hover {
+    background-color: #eaeaea;
+}
+
+/* Optional: Styling for nested submenus */
+.sub-read li ul li a {
+    
+   
+padding: 8px 15px;
+}
+
+/* Add some spacing between nested submenus */
+.sub-read li {
+    
+   
+position: relative;
+}
+
+.sub-read ul {
+    
+   
+top: 0;
+    
+   
+left: 100%; /* Ensure it opens to the right of the parent */
+}
+
+.others {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.others > li {
+    padding: 0 7px;
+}
+
+.others > li:first-child {
+    position: relative;
+}
+
+.others > li:first-child input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 5px;
+}
+
+.others > li:first-child i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.aspect-ratio-169 {
+    display: block;
+    position: relative;
+    padding-top: 56.25%;
+  }
+  
+  .aspect-ratio-169 img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  

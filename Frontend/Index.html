@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website ôn luyện Toeic</title>
+    <title>LearnAndLeadTOEIC</title>
 </head>
 <body>
 <header>
@@ -59,25 +59,94 @@
     <img src="images/toeic.jpg">
     <img src="images/1000_F_512392631_EukzEV6YYJjphvXIXWb1JiKTT4ywuMhw.jpg">
 </div> 
-</section>  
+<div class="dot-container">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+</section> 
+ <!--------------------app-comtainer-------------------->
+<section class="app-comtainer">
+    <p> Tải ứng dụng Learn & Lead TOEIC</p>
+    <div class="app-google">
+        <img src="images/appstore.png">
+        <img src="images/googleplay.png">
+    </div>
+    <p> Nhận thông tin từ Learn&Lead TOEIC </p>
+    <input type="text" placeholder="Nhập email của bạn...">
+</section>
+<!--------------------footer-------------------->
+<div class="footer-top">
+    <li><a href=""><img src="images/img-congthuong.png"></a></li>
+    <li><a href="">Liên hệ</a></li>
+    <li><a href=""></a>Tuyển dụng</li>
+    <li><a href=""></a>Giới thiệu</li>
+    <li>
+        <a href="" class="fab fa-facebook-f"></a>
+        <a href="" class="fab fa-twitter"></a>
+        <a href="" class="fab fa-youtube"></a>
+    </li>
+</div>
+<div class="footer-center">
+    <p>Estudyme is not affiliated with and completely independent of any educational organizations. <br>
+        All trademarks on the website are owner-registered and only used here for identification purposes.<br>
+        Number phone: <b>0834.550.234</b>
+    </p>
+</div>
+<div class="footer-bottom">
+    ©Learn&LeadTOEIC All rights reserved   
+</div>
 </body>
 <script>
- const imgPosition= document.querySelectorAll(".aspect-ratio-169 img")
- const imgContainer= document.querySelector(".aspect-ratio-169")
- let imgNuber= imgPosition.length
- let index=0
- //console.log(imgPosition)
- imgPosition.forEach(function(image,index){
-    image.style.left = index*100 + "%"
- })
- function imgSlide (){
-    index++;
-    console.log(index)
-    if (index>= imgNuber) {index=0}
-    function slider(index){
-        imgContainer.style.left ="-"+index*100+ "%"
+    const header = document.querySelector("header")
+window.addEventListener("scroll",function(){
+    x = window.pageYOffset
+    if(x>0){
+        header.classList.add("sticky")
+
     }
- }
- setInterval(imgSlide,5000)
+    else{
+        header.classList.remove("sticky")
+    }
+
+})
+
+
+
+
+
+
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
+    const imgContainer = document.querySelector('.aspect-ratio-169');
+    const dotItem = document.querySelectorAll(".dot");
+    let imgNumber = imgPosition.length;
+    let index = 0;
+
+    imgPosition.forEach(function(image, idx) {
+        image.style.left = idx * 100 + "%";
+        dotItem[idx].addEventListener("click", function() {
+            slider(idx);
+        });
+    });
+
+    function imgSlide() {
+        index++;
+        if (index >= imgNumber) {
+            index = 0;
+        }
+        slider(index);
+    }
+
+    function slider(index) {
+        imgContainer.style.left = "-" + index * 100 + "%";
+        const dotActive = document.querySelector(".dot.active");
+        if (dotActive) {
+            dotActive.classList.remove("active");
+        }
+        dotItem[index].classList.add("active");
+    }
+
+    setInterval(imgSlide, 5000);
 </script>
+
 </html>

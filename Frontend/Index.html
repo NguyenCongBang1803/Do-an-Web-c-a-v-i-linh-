@@ -2,70 +2,94 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/StyleHeader.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>    
+    <link rel="stylesheet" href="css/Style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnAndLeadTOEIC</title>
 </head>
 <body>
-<header>
-    <div class="logo">
-        <img src="images/luyen-thi-toeic-philippines-du-hoc-glolink-1.png"style="width:100px;height:50px;">
+    <!-----Header---------->
+    <header class="header">
+        <div class="container">
+            <div class="row-flex">
+                <div class="header-logo">
+                    <img src="images/black white Thunder logo (1).png" style="width:100px;height:100px;">
+                </div>
+                <div class="header-nav">
+                    <nav>
+                        <ul>
+                            <li><a href="">LỘ TRÌNH HÓA</a></li>
+                            <li><a href="">LISTENING</a></li>
+                            <li><a href="">READING</a></li>
+                            <li><a href="">GRAMMAR</a></li>
+                            <li><a href="">THÔNG TIN</a></li>
+                            <li><a href="">LIÊN HỆ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-search">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <i class="ri-search-line"></i>
+                </div>
+                <div class="header-account">
+                    <i class="ri-account-circle-line"></i>
+                </div>
+                <div class="header-cart">
+                    <i class="ri-shopping-bag-line"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+<!------------------------Slider------------------------>
+<section class="slider">
+    <div class="slider-items">
+        <div class="slider-item">
+            <img src="images/BIA1.png">
+        </div>
+        <div class="slider-item">
+            <img src="images/BIA2.png">
+        </div>
+        <div class="slider-item">
+            <img src="images/bia3.png">
+        </div>
+    </div>
+    <div class="slider-arrow">
+        <i class="ri-arrow-left-fill"></i>
+        <i class="ri-arrow-right-fill"></i>
+    </div>
+</section>
+<section class="welcome-section">
+    <div class="container">
+        <h1 class="welcome-title">
+            Nền tảng luyện tập chứng chỉ 
+            <span class="online-text">Tiếng Anh Online</span>
+        </h1>
+    </div>
+        <p class="welcome-text">
+            Chào mừng bạn đến với Learn&Lead TOEIC, trang web học trực tuyến hàng đầu dành cho người học ngoại ngữ. 
+            Learn&Lead TOEIC là công cụ hỗ trợ học tập hiệu quả dành cho các bạn đang chuẩn bị thi lấy các chứng chỉ ngoại ngữ quốc tế 
+            và cả những bạn chỉ đơn giản muốn nâng cao kỹ năng ngoại ngữ của mình. 
+            Với bộ câu hỏi luyện tập của chúng tôi, bạn sẽ dễ dàng đạt được chứng chỉ ngoại ngữ bạn đang cần trong thời gian nhanh chóng!
+        </p>
+    </div>
+</section>
+<section class="hot-lessons">
+    <div class="container">
+        <div class="row-grid">
+            <p></p>
+        </div>
     </div>
 
-    <div class="menu">
-        <li><a href="">LỘ TRÌNH HÓA</a></li>
-        <li>
-            <a href="">LISTENING</a>
-            <ul class="sub-menu">
-                <li><a href="">Listening Test </a>
-                    <ul>
-                        <li><a href="">15 minute</a></li>
-                        <li><a href="">30 minute</a></li>
-                        <li><a href="">45 minute</a></li>
-                        <li><a href="">60 minute</a></li>
-                    </ul>
-                </li>
-                <li><a href="">Đề Thi Toiec</a>
-                    <ul>
-                        <li><a href="">2020</a></li>
-                        <li><a href="">2021</a></li>
-                        <li><a href="">2022</a></li>
-                        <li><a href="">2023</a></li>
-                        <li><a href="">2024</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="">READING</a></li>
-        <li><a href="">GRAMMA</a></li> 
-        <li><a href="">THÔNG TIN</a></li>
-        <li><a href="">LIÊN HỆ</a></li>
-    </div>
+</section>
 
-    <div class="others">
-        <li><input placeholder="Tìm Kiếm"><i class='fas fa-search'></i></li>
-        <li> <a class="far fa-bookmark" href=""></a></li>
-        <li> <a class="fas fa-user" href=""></a></li>
-        <li> <a class="fas fa-shopping-bag" href=""></a></li>
-    </div>
 
-</header>
-<section id="Slider">
-<div class="aspect-ratio-169"> 
-    <img src="images/snapedit_1727161159970.jpeg">
-    <img src="images/toeic.jpg">
-    <img src="images/1000_F_512392631_EukzEV6YYJjphvXIXWb1JiKTT4ywuMhw.jpg">
-</div> 
-<div class="dot-container">
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-</div>
-</section> 
- <!--------------------app-comtainer-------------------->
+
+
+
+
+<!--------------------app-comtainer-------------------->
 <section class="app-comtainer">
     <p> Tải ứng dụng Learn & Lead TOEIC</p>
     <div class="app-google">
@@ -87,66 +111,20 @@
         <a href="" class="fab fa-youtube"></a>
     </li>
 </div>
-<div class="footer-center">
-    <p>Estudyme is not affiliated with and completely independent of any educational organizations. <br>
-        All trademarks on the website are owner-registered and only used here for identification purposes.<br>
-        Number phone: <b>0834.550.234</b>
-    </p>
+<section class="hotlesson">
+    
+</section>
+<div class="footer">
+    <div class="footer-center">
+        <p>Estudyme is not affiliated with and completely independent of any educational organizations. <br>
+            All trademarks on the website are owner-registered and only used here for identification purposes.<br>
+            Number phone: <b>0834.550.234</b>
+        </p>
+    </div>
+    <div class="footer-bottom">
+        ©Learn&LeadTOEIC All rights reserved   
+    </div>
 </div>
-<div class="footer-bottom">
-    ©Learn&LeadTOEIC All rights reserved   
-</div>
+<script src="./script.js"></script>
 </body>
-<script>
-    const header = document.querySelector("header")
-window.addEventListener("scroll",function(){
-    x = window.pageYOffset
-    if(x>0){
-        header.classList.add("sticky")
-
-    }
-    else{
-        header.classList.remove("sticky")
-    }
-
-})
-
-
-
-
-
-
-    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
-    const imgContainer = document.querySelector('.aspect-ratio-169');
-    const dotItem = document.querySelectorAll(".dot");
-    let imgNumber = imgPosition.length;
-    let index = 0;
-
-    imgPosition.forEach(function(image, idx) {
-        image.style.left = idx * 100 + "%";
-        dotItem[idx].addEventListener("click", function() {
-            slider(idx);
-        });
-    });
-
-    function imgSlide() {
-        index++;
-        if (index >= imgNumber) {
-            index = 0;
-        }
-        slider(index);
-    }
-
-    function slider(index) {
-        imgContainer.style.left = "-" + index * 100 + "%";
-        const dotActive = document.querySelector(".dot.active");
-        if (dotActive) {
-            dotActive.classList.remove("active");
-        }
-        dotItem[index].classList.add("active");
-    }
-
-    setInterval(imgSlide, 5000);
-</script>
-
 </html>

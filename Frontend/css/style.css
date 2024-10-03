@@ -1,3 +1,9 @@
+:root {
+    --main-bg: #eaeaea;
+    --main-transition: all 0.3s ease;
+    --header-height: 80px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,215 +17,226 @@ li {
 
 a {
     text-decoration: none;
-    color: black;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
+    color: unset;
+}
+
+.input {
+    outline: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1240px;
+    margin: auto;
+}
+
+.row-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    height: 75px;
+    width: 100%;
+}
+.content {
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; /* Giữa nội dung */
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 50px;
-    height: 80px;
-    align-items: center;
-    position: fixed;
-    top:0;
+    position: sticky; /* Để thanh header cố định khi cuộn */
+    top: 0; /* Nằm ở vị trí đầu trang */
     left: 0;
-    width: 100%;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0,3);
-}
-header.sticky{
-    background:rgb(255, 255, 255, 1);
-}
-header:hover{
-    background:rgb(255, 255, 255, 1); 
-}
-.logo {
-    flex: 1;
-}
-
-.menu {
-    flex: 3;
-    display: flex;
-}
-
-.menu > li {
-    padding: 0 12px;
-    position: relative;
-}
-
-.menu > li a {
-    font-size: 14px;
-    font-weight: bold;
-    display: block;
-    line-height: 20px;
-}
-
-.sub-menu {
-    position: absolute;
-    width: 150px;
-    border: 1px solid #ccc;
-    padding: 10px 0 10px 20px;
-    background-color: white;
-    display: none; 
-    z-index: 1;
-    background: #ffff;
-}
-
-.menu > li:hover .sub-menu {
-    display: block; 
-}
-
-.sub-menu ul {
-    padding-left: 20px;
-}
-
-.sub-menu ul a {
-    font-weight: normal !important;
-    font-size: 12px !important;
-    color: #333;
-}
-
-.menu > li > a {
-    font-size: 14px;
-    font-weight: bold !important;
-    display: block;
-    line-height: 20px;
-}
-
-.sub-read li ul {
-    left: 100%;
-    top: 0;
-}
-
-li:hover > .sub-read, li:hover > ul {
-    display: block;
-}
-
-.sub-read a, .sub-read ul a {
-    font-size: 12px;
-    padding: 8px 15px;
-    color: #333;
-}
-
-.sub-read a:hover, .sub-read ul a:hover {
-    background-color: #eaeaea;
-}
-
-.sub-read li ul li a {
-    padding: 8px 15px;
-}
-
-.sub-read li {
-    position: relative;
-}
-
-.sub-read ul {
-    top: 0;
-    left: 100%;
-}
-
-.others {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.others > li {
-    padding: 0 7px;
-    position: relative;
-}
-.others > li::after {
-    content:"";
-    display: block;
-    width: 1px;
-    height: 50%;
-    background: #ccc;
-    position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    background-color: var(--navBackground); /* Màu nền */
+    padding: 10px 20px; /* Khoảng cách trong */
+    border-bottom: 2px solid var(--ks-border-color-main); /* Đường viền dưới */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
+    z-index: 1000; /* Để nằm trên các phần tử khác */
 }
 
-.others > li:first-child {
+.header-logo {
+    margin-right: 20px; 
+}
+
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; 
+}
+.header-nav ul {
+    list-style: none; /* Không có dấu đầu dòng */
+    display: flex; /* Hiển thị theo hàng */
+    gap: 20px; /* Khoảng cách giữa các mục */
+}
+.header-nav a {
+    text-decoration: none; /* Không gạch chân */
+    color: var(--menuTextColor); /* Màu chữ */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.header-nav a:hover {
+    color: var(--menuHoverColor); /* Màu chữ khi hover */
+}
+
+.header-nav nav ul {
+    display: flex;
+    column-gap: 20px;
+}
+
+.header-nav nav ul li {
+    transition: var(--main-transition);
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.header-nav nav ul li a {
+    line-height: 60px;
+    font-size: smaller;
+    display: block;
+    margin:0px 10px 0px 10px;
+}
+
+.header-nav nav ul li:hover {
+    background-color: var(--main-bg);
+}
+
+.header-search {
     position: relative;
+    margin: 20px; 
 }
 
-.others > li:first-child input {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #333;
-    padding: 5px;
-    background: transparent;
-    outline: none;
+.header-search {
+    position: relative;
+    margin-left: 20px; 
 }
 
-.others > li:first-child i {
+.header-search input {
+    height: 30px;
+    border: 1px solid #a8a8a8;
+    padding-left: 30px; 
+    border-radius: 15px;
+    line-height: 30px; 
+}
+
+.header-search i {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer;
+    font-size: 1em; 
 }
-.others > li:last-child::after {
-    display: none;
 
+.header-cart,
+.header-account {
+    font-size: larger;
+    cursor: pointer;
+    margin-left: 20px; 
 }
-#Slider {
-    padding-bottom: 30px;
-    border-bottom: 2px solid #000;
+/*----slider----*/
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
-.aspect-ratio-169 {
-    display: block;
+.slider-items {
+    display: flex;
+    transition: left 1s ease-in-out;
     position: relative;
-    padding-top: 56.25%;
-    transition: 0.3s;
-}
-
-.aspect-ratio-169 img {
-    display: block;
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
 }
 
-.dot-container {
+.slider-item {
+    min-width: 100%;
+    flex-shrink: 0;
+    aspect-ratio: 16 / 9; 
+    opacity: 0; 
+    transition: opacity 0.1s ease-in-out; 
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider-item.active {
+    opacity: 1; 
+}
+/*----------------------------mũi tên---------------------------*/
+.slider-arrow {
     position: absolute;
-    height: 30px;
+    top: 50%;
     width: 100%;
     display: flex;
-    text-align: 50%;
-    justify-content: center;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0; 
+    transition: opacity 0.5s; 
 }
 
-.dot {
-    height: 16px;
-    width: 16px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin-right: 12px;
+.slider:hover .slider-arrow {
+    opacity: 1; 
+}
+
+.slider-arrow i {
+    font-size: 1rem;
+    color: #fff;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.dot.active {
-    background-color: #333;
+.slider-arrow i:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+/*----------------------------slogan.wellcome---------------------------*/
+.welcome-section {
+    background-color: #f6f9ff; 
+    padding: 40px 20px; 
+    text-align: center;
+
+}
+.welcome-title {
+    font-size: 2em; 
+    margin-bottom: 20px; 
+    color: #333; 
+    
+}
+
+.welcome-text {
+    font-size: 1.2em; 
+    line-height: 1.5; 
+    color: #555; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.online-text {
+    color: #477cd1; 
+    font-weight: bold; 
 }
 /*----------------------------APP---------------------------*/
 .app-comtainer{
     text-align: center;
     align-items: center;
-    padding: 150px 0 50px 0;
+    padding: 50px 0 70px 0;
 }
 .app-google{
-    margin: 50px;
+    margin: 20px;
 }
 .app-google img{
-    height: 50px;
+    height: 35px;
     cursor: pointer;
 }
 .app-comtainer p {
@@ -231,10 +248,10 @@ li:hover > .sub-read, li:hover > ul {
 
 }
 .app-comtainer input{
-    margin-top: 50px;
+    margin-top: 40px;
     border: none;
     border-bottom: 1px solid #000;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     width: 400px;
     text-align: center;
     outline: none;
@@ -249,7 +266,7 @@ footer{
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    height: 70px;
+    height: 50px;
 }
 .footer-top img{
     height: 50px;
@@ -286,5 +303,4 @@ footer p span{
 .footer-bottom{
     margin: 20px;
     text-align: center;
-
 }

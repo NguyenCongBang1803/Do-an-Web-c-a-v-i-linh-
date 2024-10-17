@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>    
-    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/StyleIndex.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnAndLeadTOEIC</title>
@@ -14,17 +14,19 @@
     <header class="header">
         <div class="container">
             <div class="row-flex">
+              <a href="index.html">
                 <div class="header-logo">
                     <img src="images/black white Thunder logo (1).png" style="width:100px;height:100px;">
                 </div>
+            </a>
                 <div class="header-nav">
                     <nav>
                         <ul>
-                            <li><a href="">LỘ TRÌNH HÓA</a></li>
-                            <li><a href="">LISTENING</a></li>
-                            <li><a href="">READING</a></li>
-                            <li><a href="">GRAMMAR</a></li>
-                            <li><a href="">THÔNG TIN</a></li>
+                            <li><a href="/Frontend/lotrinhhoa.html">LỘ TRÌNH HÓA</a></li>
+                            <li><a href="/Frontend/listening.html">LISTENING</a></li>
+                            <li><a href="/Frontend/reading.html">READING</a></li>
+                            <li><a href="/Frontend/gramma.html">GRAMMAR</a></li>
+                            <li><a href="/Frontend/thongtin.html">THÔNG TIN</a></li>
                             <li><a href="">LIÊN HỆ</a></li>
                         </ul>
                     </nav>
@@ -33,12 +35,11 @@
                     <input type="text" placeholder="Tìm kiếm">
                     <i class="ri-search-line"></i>
                 </div>
-                <div class="header-account">
-                    <i class="ri-account-circle-line"></i>
-                </div>
-                <div class="header-cart">
-                    <i class="ri-shopping-bag-line"></i>
-                </div>
+                <a href="login.html">
+                  <div class="header-account">
+                      <i class="ri-account-circle-line"></i>
+                  </div>
+              </a>
             </div>
         </div>
     </header>
@@ -64,7 +65,7 @@
     <div class="container">
         <h1 class="welcome-title">
             Nền tảng luyện tập chứng chỉ 
-            <span class="online-text">Tiếng Anh Online</span>
+            <span class="online-text">Tiếng Anh <br> Online</span>
         </h1>
     </div>
         <p class="welcome-text">
@@ -75,52 +76,128 @@
         </p>
     </div>
 </section>
-<section class="hot-lessons">
+<!--------------------section-courses-------------------->
+<section class="section courses" id="courses">
     <div class="container">
-        <div class="row-grid">
-            <p></p>
+      <div class="row event_box">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="images/lesson1.webp" alt=""></a>
+              <span class="category">Webdesign</span>
+              <span class="price"><h6><em>$</em>160</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Stella Blair</span>
+              <h4>Learn Web Design</h4>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="images/lesspn2.webp" alt=""></a>
+              <span class="category">Development</span>
+              <span class="price"><h6><em>$</em>340</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Cindy Walker</span>
+              <h4>Web Development Tips</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design wordpress">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="images/lesson3.webp" alt=""></a>
+              <span class="category">Wordpress</span>
+              <span class="price"><h6><em>$</em>640</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">David Hutson</span>
+              <h4>Latest Web Trends</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="images/lesson4.webp" alt=""></a>
+              <span class="category">Development</span>
+              <span class="price"><h6><em>$</em>450</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Stella Blair</span>
+              <h4>Online Learning Steps</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="images/lesson5.webp" alt=""></a>
+              <span class="category">Wordpress</span>
+              <span class="price"><h6><em>$</em>320</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">Sophia Rose</span>
+              <h4>Be a WordPress Master</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress design">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="images/lesson5.webp" alt=""></a>
+              <span class="category">Webdesign</span>
+              <span class="price"><h6><em>$</em>240</h6></span>
+            </div>
+            <div class="down-content">
+              <span class="author">David Hutson</span>
+              <h4>Full Stack Developer</h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 </section>
 
+  <!--------------------contact-------------------->
+  
 
-
-
-
-
-<!--------------------app-comtainer-------------------->
-<section class="app-comtainer">
-    <p> Tải ứng dụng Learn & Lead TOEIC</p>
+<!--------------------app-container-------------------->
+<section class="app-container">
+    <p>Tải ứng dụng Learn & Lead TOEIC</p>
     <div class="app-google">
-        <img src="images/appstore.png">
-        <img src="images/googleplay.png">
+        <img src="images/appstore.png" alt="App Store">
+        <img src="images/googleplay.png" alt="Google Play">
     </div>
-    <p> Nhận thông tin từ Learn&Lead TOEIC </p>
+    <p>Nhận thông tin từ Learn&Lead TOEIC</p>
     <input type="text" placeholder="Nhập email của bạn...">
 </section>
+
+
 <!--------------------footer-------------------->
-<div class="footer-top">
-    <li><a href=""><img src="images/img-congthuong.png"></a></li>
-    <li><a href="">Liên hệ</a></li>
-    <li><a href=""></a>Tuyển dụng</li>
-    <li><a href=""></a>Giới thiệu</li>
-    <li>
-        <a href="" class="fab fa-facebook-f"></a>
-        <a href="" class="fab fa-twitter"></a>
-        <a href="" class="fab fa-youtube"></a>
-    </li>
-</div>
-<section class="hotlesson">
-    
-</section>
-<div class="footer">
+<footer>
+    <div class="footer-top">
+        <li><a href=""><img src="images/img-congthuong.png" alt="Logo Công Thương"></a></li>
+        <li><a href="">Liên hệ</a></li>
+        <li><a href="">Tuyển dụng</a></li>
+        <li><a href="">Giới thiệu</a></li>
+        <li>
+            <a href="" class="fab fa-facebook-f" aria-label="Facebook"></a>
+            <a href="" class="fab fa-twitter" aria-label="Twitter"></a>
+            <a href="" class="fab fa-youtube" aria-label="YouTube"></a>
+        </li>
+    </div>    
     <div class="footer-center">
         <p>Estudyme is not affiliated with and completely independent of any educational organizations. <br>
             All trademarks on the website are owner-registered and only used here for identification purposes.<br>
             Number phone: <b>0834.550.234</b>
         </p>
     </div>
+
     <div class="footer-bottom">
         ©Learn&LeadTOEIC All rights reserved   
     </div>

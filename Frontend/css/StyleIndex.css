@@ -1,0 +1,481 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+:root {
+    --main-bg: #ffffff;
+    --main-transition: all 0.3s ease;
+    --header-height: 80px;
+    --navBackground: #ffffff; /* Màu nền cho header */
+    --ks-border-color-main: #ccc; /* Màu cho đường viền */
+    --menuTextColor: #333; /* Màu chữ cho menu */
+    --menuHoverColor: #74b7ff; /* Màu chữ khi hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.input {
+    outline: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom,#e9f4ff , #f8fbff  );
+}
+
+.container {
+    max-width: 1240px;
+    margin: auto;
+}
+
+.row-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    height: 75px;
+    width: 100%;
+}
+
+.content {
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; /* Giữa nội dung */
+}
+
+header {
+    position: sticky; /* Để thanh header cố định khi cuộn */
+    top: 0; /* Nằm ở vị trí đầu trang */
+    left: 0;
+    right: 0;
+    background-color: var(--navBackground); /* Màu nền */
+    padding: 10px 20px; /* Khoảng cách trong */
+    border-bottom: 2px solid var(--ks-border-color-main); /* Đường viền dưới */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
+    z-index: 1000; /* Để nằm trên các phần tử khác */
+}
+
+.header-logo {
+    margin-right: 20px; 
+}
+
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; 
+}
+
+.header-nav ul {
+    list-style: none; /* Không có dấu đầu dòng */
+    display: flex; /* Hiển thị theo hàng */
+    gap: 20px; /* Khoảng cách giữa các mục */
+}
+
+.header-nav a {
+    text-decoration: none; /* Không gạch chân */
+    color: var(--menuTextColor); /* Màu chữ */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.header-nav a:hover {
+    color: var(--menuHoverColor); /* Màu chữ khi hover */
+}
+
+.header-nav nav ul {
+    display: flex;
+    column-gap: 20px;
+}
+
+.header-nav nav ul li {
+    transition: var(--main-transition);
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.header-nav nav ul li a {
+    line-height: 60px;
+    font-size: 15px;
+    display: block;
+    margin: 0px 10px;
+}
+
+.header-nav nav ul li:hover {
+    background-color: var(--main-bg);
+}
+
+.header-search {
+    position: relative;
+    margin-left: 20px; 
+}
+
+.header-search input {
+    height: 30px;
+    border: 1px solid #a8a8a8;
+    padding-left: 30px; 
+    border-radius: 15px;
+    line-height: 30px; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+/* Hiệu ứng hover cho input */
+.header-search input:hover {
+    border-color: #63beff; /* Màu viền khi hover */
+    box-shadow: 0 0 5px rgba(18, 176, 243, 0.5); /* Bóng nhẹ khi hover */
+}
+
+/* Hiệu ứng focus cho input */
+.header-search input:focus {
+    border-color: #3ca0e7; /* Màu viền khi focus */
+    box-shadow: 0 0 5px rgba(60, 171, 231, 0.5); /* Bóng nhẹ khi focus */
+    outline: none; /* Bỏ viền mặc định khi focus */
+}
+
+.header-search i {
+    position: absolute;
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer;
+    font-size: 1em; 
+}
+
+.header-cart,
+.header-account {
+    font-size: larger;
+    cursor: pointer;
+    margin-left: 20px; 
+}
+/*----slider----*/
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+
+}
+
+.slider-items {
+    display: flex;
+    transition: left 1s ease-in-out;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-item {
+    min-width: 100%;
+    flex-shrink: 0;
+    aspect-ratio: 16 / 9; 
+    opacity: 0; 
+    transition: opacity 0.1s ease-in-out; 
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider-item.active {
+    opacity: 1; 
+}
+/*----------------------------mũi tên---------------------------*/
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0; 
+    transition: opacity 0.5s; 
+}
+
+.slider:hover .slider-arrow {
+    opacity: 1; 
+}
+
+.slider-arrow i {
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.slider-arrow i:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+/*----------------------------slogan.wellcome---------------------------*/
+.welcome-section {
+    background-color: #ffffff; 
+    padding: 40px 10px; 
+    text-align: center;
+    background-color: transparent;
+
+}
+.welcome-title {
+    font-size: 2em; 
+    margin-bottom: 20px; 
+    color: #333; 
+    
+}
+
+.welcome-text {
+    font-size: 1.0em; 
+    line-height: 1.5; 
+    color: #555; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.online-text {
+    color: #477cd1; 
+    font-weight: bold; 
+}
+/*----------------------------APP---------------------------*/
+.app-container {
+    text-align: center;
+    align-items: center;
+    padding: 50px 0 70px 0;
+    background-color: #ffffff; /* Màu nền cho phần ứng dụng */
+
+}
+
+.app-google {
+    margin: 20px;
+}
+
+.app-google img {
+    height: 35px;
+    cursor: pointer;
+}
+
+.app-container p {
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+}
+
+.app-container input {
+    margin-top: 40px;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    width: 400px;
+    text-align: center;
+    outline: none;
+}
+
+/*----------------------------footer---------------------------*/
+
+footer {
+    text-align: center;
+    background-color: #ffffff; /* Màu nền cho footer */
+    color: #000000; /* Màu chữ cho footer */
+    padding: 20px 0; /* Khoảng cách cho footer */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-top img {
+    height: 50px;
+}
+
+.footer-top li {
+    padding: 0 12px;
+    position: relative;
+    list-style: none; /* Ẩn dấu chấm cho danh sách */
+}
+
+.footer-top li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #ffffff;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer-top li:last-child::after {
+    display: none;
+}
+
+.footer-top li:last-child a {
+    margin-right: 10px;
+    color: #000000; /* Màu chữ cho liên kết cuối */
+}
+
+.footer-top a {
+    color: #000000; /* Màu chữ cho các liên kết */
+    text-decoration: none; /* Bỏ gạch chân */
+    transition: color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.footer-top a:hover {
+    color: #59a1ff; /* Màu chữ khi hover */
+}
+
+footer p span {
+    font-weight: 12px;
+    color: #ffffff; /* Màu chữ cho span trong footer */
+}
+
+.footer-center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container input {
+        width: 100%; /* Chiều rộng 100% trên thiết bị nhỏ */
+    }
+}
+/*-----------lesson-------*/
+
+  /* Định dạng cho hộp khóa học, hiển thị 3 ô mỗi hàng */
+  .event_box {
+    display: flex; /* Sử dụng flexbox để bố trí */
+    flex-wrap: wrap; /* Cho phép các ô xuống hàng */
+    justify-content: space-between; /* Căn giữa các ô */
+  }
+  
+  /* Đặt chiều rộng mỗi ô để vừa 3 ô trên một hàng */
+  .col-lg-4 {
+    width: 30%; /* Chiều rộng để vừa 3 ô trên một hàng */
+    margin-bottom: 30px; /* Khoảng cách giữa các hàng */
+  }
+  
+  /* Định dạng từng ô khóa học */
+  .events_item {
+    background-color: #fff; /* Màu nền của ô */
+    border-radius: 10px; /* Bo góc cho ô */
+    overflow: hidden; /* Ẩn các phần vượt ra ngoài */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng cho ô */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
+    position: relative; /* Để có thể sử dụng cho việc căn chỉnh */
+    padding-top: 60%; /* Đặt chiều cao bằng 50% chiều rộng để tạo thành hình vuông nhỏ */
+  }
+  
+  .events_item:hover {
+    transform: translateY(-10px); /* Di chuyển lên khi hover */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+  }
+  
+  .events_item .thumb {
+    position: absolute; /* Để giữ hình ảnh bên trong */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column; /* Để căn chỉnh hình ảnh và thông tin bên dưới */
+  }
+  
+  .events_item .thumb img {
+    width: 100%; /* Chiều rộng hình ảnh bằng chiều rộng ô */
+    height: 100%; /* Chiều cao hình ảnh bằng chiều cao ô */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+  }
+  
+  .events_item .thumb .category {
+    position: absolute; /* Để định vị danh mục */
+    top: 15px;
+    left: 15px;
+    background-color: hsl(211, 100%, 46%); /* Màu nền cho danh mục */
+    color: #fff; /* Màu chữ cho danh mục */
+    padding: 5px 10px; /* Khoảng cách bên trong cho danh mục */
+    border-radius: 5px; /* Bo góc cho danh mục */
+    font-size: 12px; /* Kích thước chữ cho danh mục */
+  }
+  
+  .events_item .thumb .price {
+    position: absolute; /* Để định vị giá */
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền cho giá */
+    color: #fff; /* Màu chữ cho giá */
+    padding: 5px 10px; /* Khoảng cách bên trong cho giá */
+    border-radius: 5px; /* Bo góc cho giá */
+    font-size: 16px; /* Kích thước chữ cho giá */
+  }
+  
+  .events_item .down-content {
+    padding: 20px; /* Khoảng cách bên trong cho nội dung */
+  }
+  
+  .events_item .down-content .author {
+    color: #7f8c8d; /* Màu chữ cho tác giả */
+    font-size: 14px; /* Kích thước chữ cho tác giả */
+    margin-bottom: 10px; /* Khoảng cách phía dưới tác giả */
+  }
+  
+  .events_item .down-content h4 {
+    font-size: 18px; /* Kích thước chữ cho tiêu đề khóa học */
+    color: #333; /* Màu chữ cho tiêu đề khóa học */
+    margin-bottom: auto; /* Khoảng cách phía dưới tiêu đề khóa học */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+  }
+  
+  /* Định nghĩa hiệu ứng hover cho tiêu đề khóa học */
+  .events_item .down-content h4:hover {
+    color: #1c8ccc; /* Màu mới khi hover */
+  }
+  .events_item:hover .down-content h4 {
+    color: #1c8ccc; /* Đổi màu khi hover lên toàn bộ ô */
+}
+  
+  /* Định dạng responsive cho thiết bị nhỏ */
+  @media (max-width: 768px) {
+    .col-lg-4 {
+      width: 100%; /* Cột sẽ chiếm toàn bộ chiều rộng trên thiết bị nhỏ */
+    }
+  }
+  

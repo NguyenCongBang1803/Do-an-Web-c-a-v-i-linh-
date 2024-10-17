@@ -1,0 +1,360 @@
+/*--------header------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+:root {
+    --main-bg: #ffffff;
+    --main-transition: all 0.3s ease;
+    --header-height: 100px;
+    --navBackground: #ffffff; /* Màu nền cho header */
+    --ks-border-color-main: #ccc; /* Màu cho đường viền */
+    --menuTextColor: #333; /* Màu chữ cho menu */
+    --menuHoverColor: #74b7ff; /* Màu chữ khi hover */
+}
+.container {
+    max-width: 1240px;
+    margin: auto;
+}
+.row-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    height: 75px;
+    width: 100%;
+}
+
+.content {
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; /* Giữa nội dung */
+}
+
+header {
+    position: sticky; /* Để thanh header cố định khi cuộn */
+    top: 0; /* Nằm ở vị trí đầu trang */
+    left: 0;
+    right: 0;
+    background-color: var(--navBackground); /* Màu nền */
+    padding: 10px 20px; /* Tăng khoảng cách trong để cao hơn */
+    border-bottom: 2px solid var(--ks-border-color-main); /* Đường viền dưới */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    transition: transform 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
+    z-index: 1000; /* Để nằm trên các phần tử khác */
+    
+}
+
+.header-logo {
+    margin-right: 20px; 
+}
+
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; 
+}
+
+
+.header-nav ul {
+    list-style: none; /* Không có dấu đầu dòng */
+    display: flex; /* Hiển thị theo hàng */
+    gap: 20px; /* Khoảng cách giữa các mục */
+}
+
+.header-nav a {
+    text-decoration: none; /* Không gạch chân */
+    color: var(--menuTextColor); /* Màu chữ */
+    font-weight: bold; /* Chữ đậm */
+}
+
+.header-nav a:hover {
+    color: var(--menuHoverColor); /* Màu chữ khi hover */
+}
+
+.header-nav nav ul {
+    display: flex;
+    column-gap: 20px;
+}
+
+.header-nav nav ul li {
+    transition: var(--main-transition);
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.header-nav nav ul li a {
+    line-height: 60px;
+    font-size: 15px;
+    display: block;
+    margin: 0px 10px;
+}
+
+.header-search {
+    position: relative;
+    margin-left: 20px; 
+}
+
+.header-search input {
+    height: 30px;
+    border: 1px solid #a8a8a8;
+    padding-left: 30px; 
+    border-radius: 15px;
+    line-height: 30px; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+/* Hiệu ứng hover cho input */
+.header-search input:hover {
+    border-color: #63beff; /* Màu viền khi hover */
+    box-shadow: 0 0 5px rgba(18, 176, 243, 0.5); /* Bóng nhẹ khi hover */
+}
+
+/* Hiệu ứng focus cho input */
+.header-search input:focus {
+    border-color: #3ca0e7; /* Màu viền khi focus */
+    box-shadow: 0 0 5px rgba(60, 171, 231, 0.5); /* Bóng nhẹ khi focus */
+    outline: none; /* Bỏ viền mặc định khi focus */
+}
+
+.header-search i {
+    position: absolute;
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer;
+    font-size: 1em; 
+}
+
+.header-cart,
+.header-account {
+    font-size: larger;
+    cursor: pointer;
+    margin-left: 20px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+    background: linear-gradient(to bottom,#e9f4ff , #ffffff ); /* Gradient màu nền cho toàn trang */
+    height: 100%; /* Đảm bảo chiều cao 100% cho html và body */
+    margin: 0; /* Đảm bảo không có khoảng cách giữa body và lề */
+}
+
+.container-lotrinhhoa {
+    max-width: 1000px; /* Tăng chiều rộng tối đa của container */
+    margin: 60px auto 0;
+    padding: 40px; /* Khoảng padding của container */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    min-height: 560px; /* Thay đổi chiều cao tối thiểu của container */
+}
+.highlight-title {
+    font-size: 25px; /* Tăng kích thước font tiêu đề */
+    font-weight: bold;
+    color: #264476;
+    margin-bottom: 40px; /* Khoảng cách dưới tiêu đề */
+    text-align: center;
+}
+
+
+.test-simulation {
+    display: flex; /* Sử dụng flexbox */
+    justify-content: space-between;
+}
+
+.test-card {
+    background-color: #eef2f6;
+    border-radius: 10px;
+    padding: 25px; /* Tăng padding của ô */
+    width: calc(32.5%); /* Tăng chiều rộng mỗi ô */
+    margin-right: 25px; /* Khoảng cách giữa các ô */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(105, 105, 105, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    margin-bottom: 30px; /* Khoảng cách dưới ảnh */
+}
+
+.test-card img {
+    max-width: 100%; /* Đặt chiều rộng tối đa của ảnh thành 100% */
+    object-fit: contain; /* Giữ tỷ lệ khung hình mà không bị bẹp */
+    border-radius: 5px;
+}
+
+.text-container {
+    padding: 0 10px; /* Khoảng cách bên trong của text container */
+}
+
+.test-description {
+    font-size: 20px; /* Tăng kích thước chữ mô tả */
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.test-detail {
+    font-size: 15px; /* Tăng kích thước chữ chi tiết */
+    color: #666;
+    margin-top: 5px;
+    word-spacing: 2.5px; 
+}
+.login-box {
+    width: 150px; /* Chiều rộng của ô */
+    height: 50px; /* Chiều cao của ô */
+    background-color: #1876b9; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    display: flex; /* Sử dụng Flexbox để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    border-radius: 15px; /* Bo góc */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    font-weight: bold; /* In đậm chữ */
+    cursor: pointer; /* Hiển thị con trỏ chuột dạng tay khi di chuột qua */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu nền */
+    margin-top: 35px; /* Khoảng cách từ trên xuống */
+    margin-left: auto; /* Căn trái */
+    margin-right: 0; /* Đảm bảo không có khoảng cách bên phải */
+}
+
+.login-box:hover {
+    background-color: #1fa5f2; /* Thay đổi màu nền khi di chuột qua */
+    transform: translateY(-3px); /* Di chuyển lên một chút khi hover */
+    box-shadow: 0 8px 30px rgba(107, 193, 255, 0.627); /* Tăng độ đổ bóng khi hover */
+}
+.login-box i {
+    margin-left: 5px; /* Khoảng cách giữa chữ và mũi tên */
+}
+/*----------------------------APP---------------------------*/
+.app-container {
+    text-align: center;
+    align-items: center;
+    padding: 50px 0 70px 0;
+    background-color: #ffffff; /* Màu nền cho phần ứng dụng */
+    margin-top: 80px; /* Thêm khoảng cách phía trên phần ứng dụng */
+}
+
+.app-google {
+    margin: 20px;
+}
+
+.app-google img {
+    height: 35px;
+    cursor: pointer;
+}
+
+.app-container p {
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+}
+
+.app-container input {
+    margin-top: 40px;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    width: 400px;
+    text-align: center;
+    outline: none;
+}
+
+/*----------------------------footer---------------------------*/
+
+footer {
+    text-align: center;
+    background-color: #ffffff; /* Màu nền cho footer */
+    color: #000000; /* Màu chữ cho footer */
+    padding: 20px 0; /* Khoảng cách cho footer */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-top img {
+    height: 50px;
+}
+
+.footer-top li {
+    padding: 0 12px;
+    position: relative;
+    list-style: none; /* Ẩn dấu chấm cho danh sách */
+}
+
+.footer-top li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #ffffff;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer-top li:last-child::after {
+    display: none;
+}
+
+.footer-top li:last-child a {
+    margin-right: 10px;
+    color: #000000; /* Màu chữ cho liên kết cuối */
+}
+
+.footer-top a {
+    color: #000000; /* Màu chữ cho các liên kết */
+    text-decoration: none; /* Bỏ gạch chân */
+    transition: color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.footer-top a:hover {
+    color: #59a1ff; /* Màu chữ khi hover */
+}
+
+footer p span {
+    font-weight: 12px;
+    color: #ccc; /* Màu chữ cho span trong footer */
+}
+
+.footer-center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container input {
+        width: 100%; /* Chiều rộng 100% trên thiết bị nhỏ */
+    }
+}
